@@ -13,8 +13,14 @@ sequenceDiagram
     server-->>browser: Returns JS file
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     server-->>browser: Returns JSON file
-    note right of browser: logs JSON data in browser console
+    note right of browser: Logs JSON data in browser console
     note right of browser: Runs callback function, manipulates DOM, creates a list element for each data object from JSON file
 
-    
+    note right of browser: User submits new_note "Cool"
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    note left of server: Appends new_note "Cool" as a new data object in `data.json`
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    server-->>browser: Returns JSON file w/ appended new_note "Cool" data
+    note right of browser: Logs JSON data in browser console
+    note right of browser: Runs callback function, manipulates DOM, creates a list element for each data object from JSON file
 ```
