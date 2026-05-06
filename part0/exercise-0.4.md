@@ -13,8 +13,8 @@ sequenceDiagram
     server-->>browser: Returns JS file
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     server-->>browser: Returns JSON file
-    browser: logs JSON data in browser console
-    browser: Runs callback function, manipulates DOM, creates a list element for each data object from JSON file
+    note right of browser: logs JSON data in browser console
+    note right of browser: Runs callback function, manipulates DOM, creates a list element for each data object from JSON file
 
     
 ```
