@@ -1,46 +1,44 @@
+import './index.css';
+
 const App = () => {
 
-  const Header = (props) => {
-    return (
-      <div>
-        <h1>{props.content}</h1>
-      </div>
-    )
-  }
-  const Content = () => {
-    const Part = (props) => {
+  const Course = () => {
+
+    const Header = () => {
+      return <h1>Half Stack application development</h1>
+    }
+    const parts = [
+      { name: 'Fundamentals of React: ', exercises: 10 },
+      { name: 'Using props to pass data: ', exercises: 7 },
+      { name: 'State of a component: ', exercises: 14 }
+    ]
+    const Content = () => {
       return (
-        <>
-          <p>{props.part1}{props.exercise1}</p>
-          <p>{props.part2}{props.exercise2}</p>
-          <p>{props.part3}{props.exercise3}</p>
-        </>
+        <div>
+          <p>{parts[0].name} {parts[0].exercises}</p>
+          <p>{parts[1].name} {parts[1].exercises}</p>
+          <p>{parts[2].name} {parts[2].exercises}</p>
+        </div>
       )
     }
-    return (
-      <div>
-        <Part part1='Fundamentals of React' exercise1=' 10'></Part>
-        <Part part2='Using props to pass data' exercise2=' 7'></Part>
-        <Part part3='State of a component' exercise3=' 14'></Part>
-      </div>
-    )
-  }
-  const Total = (props) => {
-    let totalNum = 10+7+14
-    return (
-      <div>
-        <p>{props.content}{totalNum}</p>
-      </div>
-    )
-  }
-
+    const Total = () => {
+      let sum = parts[0].exercises + parts[1].exercises + parts[2].exercises
+      return (
+      <p><span>Total exercises: </span>{sum}</p>
+    )}
   return (
     <>
-      <Header content='Half Stack application development'></Header>
-      <Content></Content>
-      <Total content='Number of exercises '></Total>
+      <Header />
+      <Content />
+      <Total />
     </>
-  )
-}
+  )}
+
+// APP RENDERED
+return (
+  <>
+    <Course />
+  </>
+)}
 
 export default App

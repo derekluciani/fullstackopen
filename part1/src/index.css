@@ -1,0 +1,8 @@
+body {
+  margin-block: 40px;
+  margin-inline: 20px;
+  background-color: black;
+  color: white;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 24px;
+}
