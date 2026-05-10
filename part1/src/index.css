@@ -16,7 +16,8 @@ button {
     border: none;
 }
 
-.btn-group {
+.buttons {
     display: flex;
+    align-items: center;
     gap: 12px;
 }
